@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Cleaned | Clean Spaces. Happy Places.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #F5B800;
+            --primary-dark: #121212;
+            --dark-surface: #1E1E1E;
+            --light-bg: #F8F9FA;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar .phones a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+
+        .top-bar .phones a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .brand {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .logo-text .brand span {
+            color: var(--primary-gold);
+        }
+
+        .logo-text .slogan {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .btn-estimate {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark) !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 10px rgba(245, 184, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        }
+
+        .btn-estimate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(245, 184, 0, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero p.tagline {
+            font-size: 1.25rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .badge-experience {
+            display: inline-block;
+            background: rgba(245, 184, 0, 0.15);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta .btn-call {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header h2 i {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--dark-surface);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 35px 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Quick Contact Banner */
+        .contact-banner {
+            background-color: #0d0d0d;
+            border-top: 1px solid #222;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .phone-badge {
+            background: var(--dark-surface);
+            border: 1px solid var(--primary-gold);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phone-badge i {
+            color: var(--primary-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            color: #777;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer .slogan-bottom {
+            color: var(--primary-gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            .top-bar .phones a {
+                margin: 0 8px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Contact Strip -->
+    <div class="top-bar">
+        <span><i class="fa-solid fa-sparkles" style="color: var(--primary-gold);"></i> Over 25 Years of Experience in Professional Cleaning</span>
+        <div class="phones">
+            <i class="fa-solid fa-phone" style="color: var(--primary-gold);"></i>
+            <a href="tel:5713307342">(571) 330-7342</a>
+            <a href="tel:7032006884">(703) 200-6884</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="Bee Cleaned Logo">
+                <div class="logo-text">
+                    <div class="brand">BEE <span>CLEANED</span></div>
+                    <div class="slogan">CLEAN SPACES. HAPPY PLACES.</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="tel:5713307342" class="btn-estimate">Call For Free Estimate</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="badge-experience">
+            <i class="fa-solid fa-star"></i> OVER 25 YEARS OF EXPERIENCE <i class="fa-solid fa-star"></i>
+        </div>
+        <h1>CALL FOR <span>FREE ESTIMATES</span></h1>
+        <p class="tagline">Clean Spaces. Happy Places.</p>
+        <div class="hero-cta">
+            <a href="tel:5713307342" class="btn-call">
+                <i class="fa-solid fa-phone"></i> (571) 330-7342
+            </a>
+            <a href="tel:7032006884" class="btn-call">
+                <i class="fa-solid fa-phone"></i> (703) 200-6884
+            </a>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <h2><i class="fa-solid fa-sparkles"></i> OUR SERVICES <i class="fa-solid fa-sparkles"></i></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                <h3>House Cleanings</h3>
+                <p>Routine, deep, and customized residential cleaning tailored for a spotless home environment.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Office Cleanings</h3>
+                <p>Professional workspace sanitization and upkeep to keep your commercial property pristine.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
+                <h3>Move Out Cleanings</h3>
+                <p>Comprehensive turnover cleaning ensuring spaces are pristine for new tenants or owners.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>Detail / Event Cleanings</h3>
+                <p>Specialized deep detailing, pre-event preparation, and post-gathering cleanups.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Area -->
+    <div class="contact-banner" id="about">
+        <div class="contact-box">
+            <a href="tel:5713307342" class="phone-badge">
+                <i class="fa-solid fa-phone-volume"></i> (571) 330-7342
+            </a>
+            <a href="tel:7032006884" class="phone-badge">
+                <i class="fa-solid fa-phone-volume"></i> (703) 200-6884
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="slogan-bottom">CLEAN SPACES. HAPPY PLACES.</div>
+        <p>&copy; 2026 Bee Cleaned. All Rights Reserved. Professional Cleaning Services.</p>
+    </footer>
+
+</body>
+</html>
