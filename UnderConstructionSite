@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Cleaned — Under Construction</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bee-yellow': '#fdb813',
+                        'bee-yellow-hover': '#e5a40c',
+                        'bee-dark': '#111111',
+                        'bee-black': '#0a0a0a',
+                    },
+                    fontFamily: {
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Subtle Hexagon & Glow Styles -->
+    <style>
+        .hex-bg {
+            background-color: #0d0d0d;
+            background-image: radial-gradient(rgba(253, 184, 19, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+            background-position: -19px -19px;
+        }
+
+        .glow-yellow {
+            box-shadow: 0 0 50px rgba(253, 184, 19, 0.25);
+        }
+    </style>
+</head>
+<body class="hex-bg text-white font-sans min-h-screen flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-bee-yellow selection:text-bee-dark">
+
+    <!-- Background Ambient Glow Orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-bee-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-72 h-72 bg-amber-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+    <!-- Top Bar: Status Badge -->
+    <header class="w-full max-w-4xl flex justify-center sm:justify-between items-center py-2 z-10">
+        <div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-bee-yellow/30 px-4 py-1.5 rounded-full backdrop-blur-md shadow-lg">
+            <span class="w-2.5 h-2.5 rounded-full bg-bee-yellow animate-ping"></span>
+            <span class="text-xs uppercase tracking-widest font-bold text-gray-200">Site Maintenance</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-4 text-xs font-semibold text-gray-400">
+            <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-bee-yellow"></i> Licensed & Insured</span>
+            <span>&bull;</span>
+            <span class="flex items-center gap-1.5"><i class="fas fa-sparkles text-bee-yellow"></i> 25+ Years Exp.</span>
+        </div>
+    </header>
+
+    <!-- Main Center Content -->
+    <main class="w-full max-w-3xl text-center my-auto py-8 z-10 flex flex-col items-center">
+        
+        <!-- Logo Card Presentation -->
+        <div class="relative group animate-float mb-6">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-bee-yellow via-amber-400 to-bee-yellow rounded-3xl blur-md opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative bg-white p-4 sm:p-6 rounded-3xl border-2 border-bee-yellow/40 shadow-2xl overflow-hidden flex items-center justify-center">
+                <img 
+                    src="originallogobee.jpeg" 
+                    alt="Bee Cleaned - Clean Spaces. Happy Places." 
+                    class="h-40 sm:h-52 md:h-60 w-auto object-contain mx-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                    onerror="if (this.src.indexOf('image_c1400a.png') === -1) { this.src='image_c1400a.png'; } else { this.onerror=null; this.src='https://placehold.co/400x300/ffffff/111111?text=BEE+CLEANED'; }"
+                />
+            </div>
+        </div>
+
+        <!-- Tagline with Accent Divider Lines -->
+        <div class="flex items-center justify-center gap-3 w-full max-w-md mx-auto mb-8">
+            <span class="h-[1.5px] bg-bee-yellow/60 flex-grow"></span>
+            <span class="text-xs sm:text-sm font-bold tracking-[0.2em] text-gray-300 uppercase whitespace-nowrap">Clean Spaces. Happy Places.</span>
+            <span class="h-[1.5px] bg-bee-yellow/60 flex-grow"></span>
+        </div>
+
+        <!-- Under Construction Notice Box -->
+        <div class="bg-zinc-900/90 border border-zinc-800 p-6 sm:p-8 rounded-2xl max-w-xl w-full shadow-2xl backdrop-blur-md mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-bee-yellow/10 text-bee-yellow text-xl mb-4 border border-bee-yellow/20">
+                <i class="fas fa-hammer"></i>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-heading font-extrabold uppercase text-white mb-2 tracking-wide">
+                We're Polishing Up Our New Website!
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                Our digital space is currently under construction to bring you an improved booking experience. In the meantime, our cleaning crews are active and ready for your home or business!
+            </p>
+
+            <!-- Quick Contact Callouts -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <a href="tel:5713307342" class="w-full sm:w-auto px-6 py-3 bg-bee-yellow text-bee-dark font-extrabold text-xs uppercase tracking-wider rounded-full hover:bg-white transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt"></i> (571) 330-7342
+                </a>
+                <a href="tel:7032006884" class="w-full sm:w-auto px-6 py-3 bg-zinc-800 text-white hover:text-bee-yellow font-bold text-xs uppercase tracking-wider rounded-full border border-zinc-700 hover:border-bee-yellow/50 transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-phone"></i> (703) 200-6884
+                </a>
+            </div>
+        </div>
+
+        <!-- Available Services Highlights -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs font-semibold text-gray-300 max-w-lg">
+            <span class="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center gap-1.5"><i class="fas fa-house text-bee-yellow text-[10px]"></i> House Cleanings</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center gap-1.5"><i class="fas fa-building text-bee-yellow text-[10px]"></i> Office Cleanings</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center gap-1.5"><i class="fas fa-truck-moving text-bee-yellow text-[10px]"></i> Move Out Cleans</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center gap-1.5"><i class="fas fa-calendar-check text-bee-yellow text-[10px]"></i> Detail / Event</span>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-4xl text-center py-4 border-t border-zinc-800/80 text-xs text-gray-500 z-10 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <p>&copy; <span id="year"></span> Bee Cleaned. All rights reserved. Over 25 Years of Experience.</p>
+        <p class="text-gray-400 font-medium">Residential &bull; Commercial &bull; Free Estimates</p>
+    </footer>
+
+    <!-- Dynamic Year Script -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
